@@ -18,5 +18,18 @@ void set_map(const vector<vector<char>>& vec) {
 }
 
 int main() {
-	vector<vector<char>> map; // Holds map
+	const int ROWS = 5, COLS = 5;
+	vector<vector<char>> map(ROWS,vector<char>(COLS)); // Holds map
+	for (auto &row : map) {
+		for (char &col : row) {
+			col = '*';
+		}
+	}
+	for (auto &row : map) {
+		for (char &col : row) {
+			cout << col << '\t';
+		}
+		cout << endl;
+	}
+
 }
