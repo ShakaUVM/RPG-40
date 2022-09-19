@@ -10,26 +10,25 @@
 using namespace std;
 
 void print_map(const vector<vector<char>>& vec) {
-	return; // stub me out
+	for (auto &row : vec) {
+		for (char col : row) {
+			cout << col << '\t';
+		}
+		cout << endl;
+	}
 }
 
-void set_map(const vector<vector<char>>& vec) {
-	return; // Stubbed
+void set_map(vector<vector<char>>& vec) {
+	for (auto &row : vec) {
+		for (char &col : row) {
+			col = '*';
+		}
+	}
 }
 
 int main() {
 	const int ROWS = 5, COLS = 5;
 	vector<vector<char>> map(ROWS,vector<char>(COLS)); // Holds map
-	for (auto &row : map) {
-		for (char &col : row) {
-			col = '*';
-		}
-	}
-	for (auto &row : map) {
-		for (char &col : row) {
-			cout << col << '\t';
-		}
-		cout << endl;
-	}
-
+	set_map(map);
+	print_map(map);
 }
